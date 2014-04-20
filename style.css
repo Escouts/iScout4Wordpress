@@ -1,11 +1,11 @@
 /*  
 Theme Name: i.SCOUT 4 WordPress
-Theme URI: http://www.iscout4wordpress.org.uk/
+Theme URI: http://escouts.org.uk
 Description: i.SCOUT 4 WordPress has been designed for the use of UK Scouters and Scouting organisations.
 
-Version: 1.2
-Author: hawesWeb Productions
-Author URI: http://www.iscout4wordpress.org.uk
+Version: 1.3
+Author: Escouts Community (Based on work by hawesWeb Productions)
+Author URI: http://escouts.org.uk
 
 The CSS, XHTML and design is released under GPL:
 http://www.opensource.org/licenses/gpl-license.php
@@ -19,11 +19,8 @@ http://www.opensource.org/licenses/gpl-license.php
 
 body {
     font: 100% Verdana, Arial, Helvetica;
-    background: #fff color
-
-: #333
-
-;
+    background: #fff;
+    color: #333;
 }
 
 p {
