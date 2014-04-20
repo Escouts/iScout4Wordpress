@@ -1,4 +1,6 @@
-<?php if (function_exists('register_sidebar')) {
+<?php
+
+if (function_exists('register_sidebar')) {
     register_sidebar(array('name' => 'Sidebar Top', 'before_widget' => '', 'after_widget' => '', 'before_title' => '<h3 class="title">', 'after_title' => '</h3>'));
     register_sidebar(array('name' => 'Sidebar Left', 'before_widget' => '', 'after_widget' => '', 'before_title' => '<h3 class="title">', 'after_title' => '</h3>'));
     register_sidebar(array('name' => 'Sidebar Right', 'before_widget' => '', 'after_widget' => '', 'before_title' => '<h3 class="title">', 'after_title' => '</h3>'));
@@ -8,14 +10,10 @@
     register_sidebar(array('name' => 'Main Right', 'before_widget' => '', 'after_widget' => '', 'before_title' => '<h3 class="title">', 'after_title' => '</h3>'));
     register_sidebar(array('name' => 'Main Right2', 'before_widget' => '', 'after_widget' => '', 'before_title' => '<h3 class="title">', 'after_title' => '</h3>'));
 }
-
-
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'custom_trim_excerpt');
-
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'custom_trim_excerpt');
-
 function custom_trim_excerpt($text)
 { // Fakes an excerpt if needed
     global $post;
@@ -37,10 +35,6 @@ function custom_trim_excerpt($text)
     }
     return $text;
 }
-
-
-?>
-<?php
 function the_slider_limit($max_char, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '')
 {
     $slide = get_the_content($more_link_text, $stripteaser, $more_file);
@@ -59,16 +53,13 @@ function the_slider_limit($max_char, $more_link_text = '(more...)', $stripteaser
         echo $slide;
     }
 }
-
 function new_excerpt_more($more)
 {
     return '<a href="' . get_permalink($post->ID) . '">' . '<br/> read more..' . '</a>';
 }
 
 add_filter('excerpt_more', 'new_excerpt_more');
-?>
 
-<?php
 add_filter('loginout', 'loginout_text_change');
 function loginout_text_change($text)
 {
@@ -82,5 +73,4 @@ function loginout_text_change($text)
     $text = str_replace($logout_text_before, $logout_text_after, $text);
     return $text;
 }
-
 ?>
